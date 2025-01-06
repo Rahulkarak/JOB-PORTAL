@@ -1,17 +1,30 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import { Button } from "./components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {Popover,PopoverContent, PopoverTrigger,} from "@/components/ui/popover";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from "./components/shared/Navbar";
+import Signup from "./components/auth/Signup";
+import Login from "./components/auth/Login";
+import Home from "./components/Home";
+
+
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: '/signup',
+    element: <Signup />
+  }
+])
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-    </div>
+    <>
+    <RouterProvider router={appRouter}/>
+    </>
   );
 }
 
