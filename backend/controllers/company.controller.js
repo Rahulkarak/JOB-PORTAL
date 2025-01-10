@@ -71,6 +71,7 @@ export const getComanyById=async(req,res)=>{
 export const updateCompany=async(req,res)=>{
     try{
         const {name,description,website,location}=req.body;
+        console.log(name,description,website,location)
         const file=req.file;
         //idhar cloudinary
 
