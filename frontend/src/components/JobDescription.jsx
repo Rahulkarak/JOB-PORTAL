@@ -8,14 +8,21 @@ import { setSingleJob } from '../redux/jobSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const JobDescription = () => {
-    const isApplied = 1;
+    const {singleJob}=useSelector(store=>store.job)
+    const {user}=useDispatch(store=>store.auth);
+    const isApplied = singleJob?.application.some(application=>application.applicant==user?._id) ||false;
 
     const params=useParams();
     const jobId=params.id;
-    const {singleJob}=useSelector(store=>store.job)
-    const {user}=useDispatch(store=>store.auth);
     const dispatch=useDispatch();
     
+    const applyJobHandler=async()=>{
+        try {
+            const res=await axios.get()
+        } catch (error) {
+            
+        }
+    }
 
   
         useEffect(()=>{
