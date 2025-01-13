@@ -21,38 +21,30 @@ const CompaniesTable = () => {
                 </TableHeader>
                 <TableBody>
                     {
-                        companies.length <= 0 ? <span>You haven't registered any company yet.</span> : (
-                            <>
-                                {
-                                    companies?.map((company) => {
-                                        return (
-                                            <div key={company._id}>
-                                                <TableCell>
-                                                    <Avatar>
-                                                        <AvatarImage style={{ width: '40px', height: '40px' }} src="https://marketplace.canva.com/EAFK6GIdp20/1/0/1600w/canva-blue-%26-black-simple-company-logo-nwGjVuSJ-D0.jpg" />
-                                                    </Avatar>
-                                                </TableCell>
-                                                <TableCell>Company Name</TableCell>
-                                                <TableCell>18-07-2024</TableCell>
-                                                <TableCell>18-07-2024</TableCell>
-                                                <TableCell className='text-right cursor-pointer'>
-                                                    <Popover>
-                                                        <PopoverTrigger><MoreHorizontal /></PopoverTrigger>
-                                                        <PopoverContent className='w-32'>
-                                                            <div className='flex items-center gap-2 w-fit cursor-pointer'>
-                                                                <Edit2 className='w-4' />
-                                                                <span>Edit</span>
-                                                            </div>
-                                                        </PopoverContent>
-                                                    </Popover>
-                                                </TableCell>
-                                            </div>
-                                        )
-                                    })
-                                }
 
-                            </>
-                        )
+
+                        companies?.map((company) => (
+                            <tr>
+                                <TableCell>
+                                    <Avatar>
+                                        <AvatarImage style={{ width: '40px', height: '40px' }} src={company.logo} />
+                                    </Avatar>
+                                </TableCell>
+                                <TableCell>{company.name}</TableCell>
+                                <TableCell>{company.createdAt.split("T")[0]}</TableCell>
+                                <TableCell className='text-right cursor-pointer'>
+                                    <Popover>
+                                        <PopoverTrigger><MoreHorizontal /></PopoverTrigger>
+                                        <PopoverContent className='w-32'>
+                                            <div className='flex items-center gap-2 w-fit cursor-pointer'>
+                                                <Edit2 className='w-4' />
+                                                <span>Edit</span>
+                                            </div>
+                                        </PopoverContent>
+                                    </Popover>
+                                </TableCell>
+                            </tr>
+                        ))
                     }
 
                 </TableBody>
