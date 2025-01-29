@@ -84,7 +84,7 @@ const Signup = () => {
                             value={input.fullname}
                             name="fullname"
                             onChange={changeEventHandler}
-                            placeholder="rahul"
+                            placeholder="xyz"
                         />
                     </div>
                     <div className='my-2'>
@@ -94,7 +94,7 @@ const Signup = () => {
                             value={input.email}
                             name="email"
                             onChange={changeEventHandler}
-                            placeholder="rahul@gmail.com"
+                            placeholder="abc@gmail.com"
                         />
                     </div>
                     <div className='my-2'>
@@ -104,7 +104,7 @@ const Signup = () => {
                             value={input.phoneNumber}
                             name="phoneNumber"
                             onChange={changeEventHandler}
-                            placeholder="6201686801"
+                            placeholder="123"
                         />
                     </div>
                     <div className='my-2'>
@@ -114,7 +114,7 @@ const Signup = () => {
                             value={input.password}
                             name="password"
                             onChange={changeEventHandler}
-                            placeholder="rahul@gmail.com"
+                            placeholder="Password"
                         />
                     </div>
                     <div className='flex items-center justify-between'>
@@ -154,7 +154,7 @@ const Signup = () => {
                     {
                         loading ? <Button className='w-full my-4'><Loader2 className='mr-2 h-4 w-4 animate-spin' />Please wait</Button> : <Button type='submit' className='w-full my-4'>Signup</Button>
                     }
-                    <span className='text-sm'>Already have an account?<Link to="/Login" className='text-blue-600'>Login</Link></span>
+                    <span className='text-sm'>Already have an account?<Link to="/login" className='text-blue-600'>Login</Link></span>
                 </form>
             </div>
         </div>
